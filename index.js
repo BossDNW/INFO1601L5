@@ -111,40 +111,28 @@ function happyPrint(string){
  add(5, 10, happyPrint);
  add(11, 12, sadPrint);
 
- /*console.log("------------------------------------------------")
-function printDate(){
-  console.log(Date().toLocaleTimeString());
-}
-     
-setInterval(printDate, 1000);*/
+ console.log("------------------------------------------------")
 
-console.log("------------------------------------------------")
-let arr = [12, 33, 4, 5, -4, 8, 19, 25];
-                
-function double(num){
-  return num * 2;
+function createPerson(name, height, weight) {
+  return { name: name, height: height, weight: weight };
 }
 
-let doubledArr = arr.map(double); 
-console.log(doubledArr);
-
-function isOdd(num){
-  return (element%2 !== 0); 
-}
-let odds = arr.filter(isOdd);
-console.log(odds);
-
-function has5Factor(){
-  return ele % 5 === 0;
+function calcBMI(weight, height) {
+  return weight / (height * height);
 }
 
-let hasFiveFactor = arr.some(has5Factor);
-console.log(hasFiveFactor);
-
-function intCompare(a, b){
- return a - b;
+function avgBMI(people) {
+  let sum = 0;
+  for (let person of people) {
+    sum += calcBMI(person.weight, person.height);
+  }
+  return sum / people.length;
 }
 
-let ascending = arr.sort(intCompare)
-console.log(ascending);
-console.log("------------------------------------------------")
+let people = [
+  createPerson("Sally", 60, 2.5),
+  createPerson("Ben", 81, 3),
+  createPerson("Shelly", 50, 1.7)
+];
+
+console.log(avgBMI(people));
