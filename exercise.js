@@ -63,4 +63,33 @@ let bob = {
     return average/count;
   }
 
-console.log(getAverageGrade(students[0],'INFO 1601'));
+console.log(`The Average Grade for ${students[0].fname} is: ${getAverageGrade(students[0],'INFO 1601')}`);
+
+function getAssignmentMark(student,course,num){
+  let grade = -1;
+  if (student.transcript[course].grades[num]){
+    grade = student.transcript[course].grades[num];
+  }
+  return grade;
+}
+console.log(`${students[1].fname}'s grade for ${students[1].transcript[0].course} is: ${getAssignmentMark(students[1],0,0)}`);
+
+function averageAssessment(students,courseName,assignment){
+  let average=0,count = 0;
+  for (let i = 0;i<students.length;i++){
+      for (let j=0;j<students[i].transcript.length;j++){
+        if (students[i].transcript[j].course === courseName){
+          average += students[i].transcript[j].grades[assignment];
+          count++;
+        }
+      }
+  }
+  average/=count;
+  if (average>0){
+    return average;
+  }else {
+    return -1;
+  }
+}
+
+console.log(`The Average Grade for INFO1601 is: ${averageAssessment(students,'INFO 1601',2)}`);
