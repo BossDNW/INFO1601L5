@@ -73,7 +73,6 @@ let difference = now - date;
 let daysBetween = difference * 1.15741e-8;
 console.log(daysBetween);
 
-console.log("------------------------------------------------")
 let root = Math.sqrt(9);
 
 let cubed  = Math.pow(2, 3);
@@ -111,3 +110,36 @@ function happyPrint(string){
  }
  add(5, 10, happyPrint);
  add(11, 12, sadPrint);
+
+ /*console.log("------------------------------------------------")
+function printDate(){
+  console.log(Date().toLocaleTimeString());
+}
+     
+setInterval(printDate, 1000);*/
+
+console.log("------------------------------------------------")
+let arr = [ -5, 16, 33, 42, 103, 344];
+
+console.log(arr.includes(-5));
+
+arr.push(11);
+
+console.log(arr);
+
+let lastItem = arr.pop();
+
+console.log(lastItem, arr);
+
+arr.unshift(22);
+
+console.log(arr);
+
+let firstItem = arr.shift();
+console.log(firstItem, arr);
+
+let reversed = arr.reverse(); 
+console.log(reversed);
+console.log(arr.join('-'));
+
+console.log("------------------------------------------------")
