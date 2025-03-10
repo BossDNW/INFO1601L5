@@ -97,12 +97,17 @@ function hello(){
   console.log("Hello");
 }
 
-function add(a,b=15){
-  return a+b;
-}
-
-let ans = add(5,12);
-console.log(ans);
-
-let ans2 = add(2);
-console.log(ans2)
+function happyPrint(string){
+  console.log("😀: "+string);
+ }
+ 
+ function sadPrint(string){
+  console.log("😢: "+string);
+ }
+ 
+ function add(a, b, callback){
+    let ans = a + b;
+    callback(ans);
+ }
+ add(5, 10, happyPrint);
+ add(11, 12, sadPrint);
