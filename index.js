@@ -53,3 +53,41 @@ for (let x=1;x<=50;x++){
     console.log(x)
   }
 }
+
+console.log("------------------------------------------------")
+let nowTimestamp = Date.now();
+
+console.log(nowTimestamp);
+
+let now = new Date(nowTimestamp);
+
+let date = new Date(2019, 11, 17, 3, 24, 0);
+
+console.log(date.toLocaleDateString("en-US"));
+
+console.log(` ${now.getDate()} - ${now.getMonth() + 1} - ${now.getFullYear()} `); // 9 - 2 - 2020 
+
+let difference = now - date;
+
+
+let daysBetween = difference * 1.15741e-8;
+console.log(daysBetween);
+
+console.log("------------------------------------------------")
+let root = Math.sqrt(9);
+
+let cubed  = Math.pow(2, 3);
+
+let roundDown = Math.floor(12.3453);
+
+let roundUp = Math.ceil(12.3453);
+
+let absolute = Math.abs(-34);
+
+let randNum = Math.random();
+
+let pi = Math.pi;
+
+function randInt(min, max){
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
