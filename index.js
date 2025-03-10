@@ -119,27 +119,32 @@ function printDate(){
 setInterval(printDate, 1000);*/
 
 console.log("------------------------------------------------")
-let arr = [ -5, 16, 33, 42, 103, 344];
+let arr = [12, 33, 4, 5, -4, 8, 19, 25];
+                
+function double(num){
+  return num * 2;
+}
 
-console.log(arr.includes(-5));
+let doubledArr = arr.map(double); 
+console.log(doubledArr);
 
-arr.push(11);
+function isOdd(num){
+  return (element%2 !== 0); 
+}
+let odds = arr.filter(isOdd);
+console.log(odds);
 
-console.log(arr);
+function has5Factor(){
+  return ele % 5 === 0;
+}
 
-let lastItem = arr.pop();
+let hasFiveFactor = arr.some(has5Factor);
+console.log(hasFiveFactor);
 
-console.log(lastItem, arr);
+function intCompare(a, b){
+ return a - b;
+}
 
-arr.unshift(22);
-
-console.log(arr);
-
-let firstItem = arr.shift();
-console.log(firstItem, arr);
-
-let reversed = arr.reverse(); 
-console.log(reversed);
-console.log(arr.join('-'));
-
+let ascending = arr.sort(intCompare)
+console.log(ascending);
 console.log("------------------------------------------------")
