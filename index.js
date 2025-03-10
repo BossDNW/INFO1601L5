@@ -91,3 +91,18 @@ let pi = Math.pi;
 function randInt(min, max){
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+console.log("------------------------------------------------")
+function hello(){
+  console.log("Hello");
+}
+
+function add(a,b=15){
+  return a+b;
+}
+
+let ans = add(5,12);
+console.log(ans);
+
+let ans2 = add(2);
+console.log(ans2)
